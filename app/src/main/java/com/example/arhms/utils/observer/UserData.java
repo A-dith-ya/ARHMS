@@ -1,4 +1,4 @@
-package com.example.arhms.utils;
+package com.example.arhms.utils.observer;
 
 import java.util.ArrayList;
 import com.example.arhms.interfaces.IObserver;

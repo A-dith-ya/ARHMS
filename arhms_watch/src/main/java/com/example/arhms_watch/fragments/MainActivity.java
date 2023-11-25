@@ -1,4 +1,4 @@
-package com.example.arhms_watch;
+package com.example.arhms_watch.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,7 +7,6 @@ import android.widget.TextView;
 import com.example.arhms_watch.databinding.ActivityMainBinding;
 
 public class MainActivity extends Activity {
-
     private TextView mTextView;
     private ActivityMainBinding binding;
 

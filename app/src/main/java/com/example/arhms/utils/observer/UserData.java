@@ -2,22 +2,28 @@ package com.example.arhms.utils.observer;
 
 import java.util.ArrayList;
 import com.example.arhms.interfaces.IObserver;
+import com.example.arhms.interfaces.ISubject;
 
-public class UserData {
+public class UserData implements ISubject {
     private ArrayList<IObserver> observers;
     private long temperature;
     private long[] heartRate = new long[2];
 
-    public UserData () {}
+    public UserData () {
+        this.observers = new ArrayList<IObserver>(2);
+    }
 
+    @Override
     public void registerObserver(IObserver o) {
         this.observers.add(o);
     }
 
+    @Override
     public void removeObserver(IObserver o) {
         this.observers.remove(o);
     }
 
+    @Override
     public void notifyObservers() {
         for (int i = 0; i < observers.size(); i++) {
             IObserver o = (IObserver) this.observers.get(i);

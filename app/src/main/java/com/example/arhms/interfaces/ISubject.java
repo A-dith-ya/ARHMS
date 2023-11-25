@@ -1,7 +1,7 @@
 package com.example.arhms.interfaces;
 
 public interface ISubject {
-    public void registerObserver();
-    public void removeObserver();
-    public void notifyObserver();
+    public void registerObserver(IObserver o);
+    public void removeObserver(IObserver o);
+    public void notifyObservers();
 }

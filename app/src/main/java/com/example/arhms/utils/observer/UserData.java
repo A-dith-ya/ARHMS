@@ -11,6 +11,8 @@ public class UserData implements ISubject {
 
     public UserData () {
         this.observers = new ArrayList<IObserver>(2);
+        registerObserver(new Temperature());
+        registerObserver(new HeartRate());
     }
 
     @Override
@@ -31,6 +33,7 @@ public class UserData implements ISubject {
         }
     }
 
+    @Override
     public void setMeasurements(long temperature, long[] heartRate) {
         try {
             this.temperature = temperature;

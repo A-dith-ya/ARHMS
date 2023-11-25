@@ -9,6 +9,10 @@ import com.example.arhms.interfaces.IObserver;
 import com.example.arhms.interfaces.ISubject;
 import com.example.arhms.utils.observer.Temperature;
 import com.example.arhms.utils.observer.UserData;
+import com.example.arhms.interfaces.AlertCommand;
+import com.example.arhms.utils.command.AlertInvoker;
+import com.example.arhms.utils.command.AlertSystem;
+import com.example.arhms.utils.command.CriticalVitalSignAlert;
 
 public class MainActivity extends AppCompatActivity {
     public MainActivity() {
@@ -29,5 +33,12 @@ public class MainActivity extends AppCompatActivity {
         String s = subject.getObserver(0).getString();
 
         editText.setText(s);
+        AlertSystem alertSystem = new AlertSystem(this);
+        AlertInvoker alertInvoker = new AlertInvoker();
+
+        AlertCommand criticalVitalSignAlert = new CriticalVitalSignAlert(alertSystem);
+
+        alertInvoker.setAlertCommand(criticalVitalSignAlert);
+        alertInvoker.executeAlert();
     }
 }

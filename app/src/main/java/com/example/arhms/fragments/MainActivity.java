@@ -10,6 +10,10 @@ import com.example.arhms.interfaces.IObserver;
 import com.example.arhms.interfaces.ISubject;
 import com.example.arhms.utils.observer.Temperature;
 import com.example.arhms.utils.observer.UserData;
+import com.example.arhms.interfaces.IAlertCommand;
+import com.example.arhms.utils.command.AlertInvoker;
+import com.example.arhms.utils.command.AlertSystem;
+import com.example.arhms.utils.command.CriticalVitalSignAlert;
 
 public class MainActivity extends AppCompatActivity {
     public MainActivity() {

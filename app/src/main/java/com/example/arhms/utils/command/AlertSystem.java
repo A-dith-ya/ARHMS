@@ -3,7 +3,6 @@ package com.example.arhms.utils.command;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-
 import com.example.arhms.interfaces.IAlertCommand;
 
 public class AlertSystem {

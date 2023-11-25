@@ -17,8 +17,7 @@ import com.example.arhms.utils.command.TemperatureLow;
 public class MainActivity extends AppCompatActivity {
     public MainActivity() {
     }
-
-    @Override
+@Override
     protected void onCreate(Bundle savedInstanceState) {
         ISubject subject = new UserData();
         subject.setMeasurements(35,new long[]{120, 60});

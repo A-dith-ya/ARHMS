@@ -11,7 +11,7 @@ public class Temperature implements IObserver {
         // do nothing with heart rate
     }
 
-    public long getValue() {
-        return this.value;
+    public String getString() {
+        return String.valueOf(this.value);
     }
 }

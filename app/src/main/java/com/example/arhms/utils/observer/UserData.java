@@ -44,4 +44,9 @@ public class UserData implements ISubject {
             String s = error.getMessage();
         }
     }
+
+    @Override
+    public IObserver getObserver(int i) {
+        return this.observers.get(i);
+    }
 }

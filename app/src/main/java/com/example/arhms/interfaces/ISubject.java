@@ -7,4 +7,5 @@ public interface ISubject {
     public void removeObserver(IObserver o);
     public void notifyObservers();
     public void setMeasurements(long temperature, long[] heartRate) ;
+    public IObserver getObserver(int i);
 }

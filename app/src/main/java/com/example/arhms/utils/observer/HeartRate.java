@@ -16,6 +16,11 @@ public class HeartRate implements IObserver {
         this.value.add(heartRate);
     }
 
+    @Override
+    public String getString() {
+        return "N/A";
+    }
+
     public ArrayList<long[]> getValue() {
         return this.value;
     }

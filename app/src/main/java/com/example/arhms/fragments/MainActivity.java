@@ -14,6 +14,8 @@ import com.example.arhms.interfaces.IAlertCommand;
 import com.example.arhms.utils.command.AlertInvoker;
 import com.example.arhms.utils.command.AlertSystem;
 import com.example.arhms.utils.command.CriticalVitalSignAlert;
+import com.example.arhms.utils.command.HeartRateAlert;
+import com.example.arhms.utils.command.TempAlert;
 
 public class MainActivity extends AppCompatActivity {
     public MainActivity() {
@@ -35,5 +37,20 @@ public class MainActivity extends AppCompatActivity {
 
         editText.setText(s);
         startActivity(new Intent(MainActivity.this, BasicUserCustomizablePageActivity.class));
+        AlertSystem alertSystem = new AlertSystem(this);
+        AlertInvoker alertInvoker = new AlertInvoker();
+
+        IAlertCommand criticalVitalSignAlert = new CriticalVitalSignAlert(alertSystem);
+        IAlertCommand heartRateAlert = new HeartRateAlert(alertSystem);
+        IAlertCommand tempAlert = new TempAlert(alertSystem);
+
+        alertInvoker.setAlertCommand(criticalVitalSignAlert);
+        alertInvoker.executeAlert();
+
+        alertInvoker.setAlertCommand(heartRateAlert);
+        alertInvoker.executeAlert();
+
+        alertInvoker.setAlertCommand(tempAlert);
+        alertInvoker.executeAlert();
     }
 }

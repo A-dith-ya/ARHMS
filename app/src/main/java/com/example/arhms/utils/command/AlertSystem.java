@@ -12,7 +12,11 @@ public class AlertSystem {
         this.context = context;
     }
 
+<<<<<<< HEAD
     public void heartRateLow() {
+=======
+    public void criticalVitalSignsAlert() {
+>>>>>>> 3300835 (Add concrete alert command classes HeartRateAlert and TempAlert that implement AlertCommand interface)
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Heart Rate Alert")
                 .setMessage("Your heart rate signs are abnormally low.")
@@ -52,6 +56,30 @@ public class AlertSystem {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Temperature Alert")
                 .setMessage("Your temperature is abnormally high.")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
+
+    public void heartRateAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Heart Rate Alert")
+                .setMessage("Your heart rate signs are abnormal.")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
+
+    public void temperatureAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Temperature Alert")
+                .setMessage("Your temperature is abnormal.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();

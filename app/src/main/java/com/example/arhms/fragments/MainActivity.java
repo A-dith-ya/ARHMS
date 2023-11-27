@@ -3,6 +3,7 @@ package com.example.arhms.fragments;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import com.example.arhms.R;
 import com.example.arhms.interfaces.IObserver;
@@ -29,5 +30,6 @@ public class MainActivity extends AppCompatActivity {
         String s = subject.getObserver(0).getString();
 
         editText.setText(s);
+        startActivity(new Intent(MainActivity.this, BasicUserCustomizablePageActivity.class));
     }
 }

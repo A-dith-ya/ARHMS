@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 
-import com.example.arhms.interfaces.AlertCommand;
+import com.example.arhms.interfaces.IAlertCommand;
 
 public class AlertSystem {
     private Context context;
@@ -13,22 +13,10 @@ public class AlertSystem {
         this.context = context;
     }
 
-    public void criticalVitalSignsAlert() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Critical Vital Signs Alert")
-                .setMessage("Your critical signs are extreme.")
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
-                .show();
-    }
-
-    public void heartRateAlert() {
+    public void heartRateHigh() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Heart Rate Alert")
-                .setMessage("Your heart rate signs are abnormal.")
+                .setMessage("Your heart rate signs are abnormally high.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -37,10 +25,10 @@ public class AlertSystem {
                 .show();
     }
 
-    public void temperatureAlert() {
+    public void temperatureLow() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Temperature Alert")
-                .setMessage("Your temperature is abnormal.")
+                .setMessage("Your temperature is abnormally low.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();

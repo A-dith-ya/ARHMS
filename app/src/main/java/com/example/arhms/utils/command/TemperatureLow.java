@@ -1,11 +1,11 @@
 package com.example.arhms.utils.command;
 
-import com.example.arhms.interfaces.AlertCommand;
+import com.example.arhms.interfaces.IAlertCommand;
 
-public class TempAlert implements AlertCommand {
+public class TemperatureLow implements IAlertCommand {
     private AlertSystem alertSystem;
 
-    public TempAlert(AlertSystem alertSystem) {
+    public TemperatureLow(AlertSystem alertSystem) {
         this.alertSystem = alertSystem;
     }
 

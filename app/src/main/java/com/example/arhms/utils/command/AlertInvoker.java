@@ -1,11 +1,11 @@
 package com.example.arhms.utils.command;
 
-import com.example.arhms.interfaces.AlertCommand;
+import com.example.arhms.interfaces.IAlertCommand;
 
 public class AlertInvoker {
-    private AlertCommand alertCommand;
+    private IAlertCommand alertCommand;
 
-    public void setAlertCommand(AlertCommand alertCommand) {
+    public void setAlertCommand(IAlertCommand alertCommand) {
         this.alertCommand = alertCommand;
     }
 

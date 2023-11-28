@@ -1,5 +1,5 @@
 package com.example.arhms.interfaces;
 
-public interface AlertCommand {
+public interface IAlertCommand {
     public void execute();
 }

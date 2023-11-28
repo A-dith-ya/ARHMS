@@ -12,11 +12,7 @@ public class AlertSystem {
         this.context = context;
     }
 
-<<<<<<< HEAD
     public void heartRateLow() {
-=======
-    public void criticalVitalSignsAlert() {
->>>>>>> 3300835 (Add concrete alert command classes HeartRateAlert and TempAlert that implement AlertCommand interface)
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Heart Rate Alert")
                 .setMessage("Your heart rate signs are abnormally low.")
@@ -40,18 +36,6 @@ public class AlertSystem {
                 .show();
     }
 
-    public void temperatureLow() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Temperature Alert")
-                .setMessage("Your temperature is abnormally low.")
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
-                .show();
-    }
-
     public void temperatureHigh() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Temperature Alert")
@@ -64,22 +48,10 @@ public class AlertSystem {
                 .show();
     }
 
-    public void heartRateAlert() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Heart Rate Alert")
-                .setMessage("Your heart rate signs are abnormal.")
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
-                .show();
-    }
-
-    public void temperatureAlert() {
+    public void temperatureLow() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Temperature Alert")
-                .setMessage("Your temperature is abnormal.")
+                .setMessage("Your temperature is abnormally low.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();

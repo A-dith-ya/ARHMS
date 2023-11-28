@@ -6,16 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import com.example.arhms.R;
-import com.example.arhms.interfaces.IObserver;
 import com.example.arhms.interfaces.ISubject;
-import com.example.arhms.utils.observer.Temperature;
 import com.example.arhms.utils.observer.UserData;
 import com.example.arhms.interfaces.IAlertCommand;
 import com.example.arhms.utils.command.AlertInvoker;
 import com.example.arhms.utils.command.AlertSystem;
-import com.example.arhms.utils.command.CriticalVitalSignAlert;
-import com.example.arhms.utils.command.HeartRateAlert;
-import com.example.arhms.utils.command.TempAlert;
+import com.example.arhms.utils.command.HeartRateHigh;
+import com.example.arhms.utils.command.TemperatureLow;
 
 public class MainActivity extends AppCompatActivity {
     public MainActivity() {
@@ -40,17 +37,13 @@ public class MainActivity extends AppCompatActivity {
         AlertSystem alertSystem = new AlertSystem(this);
         AlertInvoker alertInvoker = new AlertInvoker();
 
-        IAlertCommand criticalVitalSignAlert = new CriticalVitalSignAlert(alertSystem);
-        IAlertCommand heartRateAlert = new HeartRateAlert(alertSystem);
-        IAlertCommand tempAlert = new TempAlert(alertSystem);
+        IAlertCommand heartRateHigh = new HeartRateHigh(alertSystem);
+        IAlertCommand temperatureLow = new TemperatureLow(alertSystem);
 
-        alertInvoker.setAlertCommand(criticalVitalSignAlert);
+        alertInvoker.setAlertCommand(heartRateHigh);
         alertInvoker.executeAlert();
 
-        alertInvoker.setAlertCommand(heartRateAlert);
-        alertInvoker.executeAlert();
-
-        alertInvoker.setAlertCommand(tempAlert);
+        alertInvoker.setAlertCommand(temperatureLow);
         alertInvoker.executeAlert();
     }
 }

@@ -1,11 +1,11 @@
 package com.example.arhms.utils.command;
 
-import com.example.arhms.interfaces.AlertCommand;
+import com.example.arhms.interfaces.IAlertCommand;
 
-public class HeartRateAlert implements AlertCommand {
+public class HeartRateHigh implements IAlertCommand {
     private AlertSystem alertSystem;
 
-    public HeartRateAlert(AlertSystem alertSystem) {
+    public HeartRateHigh(AlertSystem alertSystem) {
         this.alertSystem = alertSystem;
     }
 

@@ -28,7 +28,7 @@ public class TempDecorator extends UserMetricDecorator {
         tempImageView.setPadding(10, 10, 5, 10);
 
         TextView tempMetricTextView = new TextView(getContext());
-        tempMetricTextView.setText("Temp: 120 C");
+        tempMetricTextView.setText("Temperature: 120 C");
         tempMetricTextView.setTextColor(Color.RED);
         tempMetricTextView.setTextSize(18);
         tempMetricTextView.setPadding(0, 10, 0, 10);

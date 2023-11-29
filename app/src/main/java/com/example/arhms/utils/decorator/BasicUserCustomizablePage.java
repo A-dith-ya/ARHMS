@@ -1,6 +1,7 @@
 package com.example.arhms.utils.decorator;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,7 +15,10 @@ public class BasicUserCustomizablePage extends LinearLayout implements UserCusto
         setOrientation(VERTICAL);
 
         TextView nameTextView = new TextView(context);
-        nameTextView.setText("Basic Page");
+        nameTextView.setText("User Metrics Dashboard");
+        nameTextView.setTextColor(Color.BLACK);
+        nameTextView.setTextSize(18);
+        nameTextView.setPadding(50, 10, 0, 10);
         addView(nameTextView);
     }
 

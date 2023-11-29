@@ -11,6 +11,6 @@ public class HeartRateLow implements IAlertCommand {
 
     @Override
     public void execute() {
-
+        alertSystem.heartRateLow();
     }
 }

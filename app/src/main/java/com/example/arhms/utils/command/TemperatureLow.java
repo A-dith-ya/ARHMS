@@ -11,6 +11,6 @@ public class TemperatureLow implements IAlertCommand {
 
     @Override
     public void execute() {
-        alertSystem.temperatureAlert();
+        alertSystem.temperatureLow();
     }
 }

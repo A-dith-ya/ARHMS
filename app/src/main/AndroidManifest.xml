@@ -14,6 +14,9 @@
         android:theme="@style/Theme.ARHMS"
         tools:targetApi="31">
         <activity
+            android:name=".fragments.MetricManagementActivity"
+            android:exported="false" />
+        <activity
             android:name=".fragments.DashboardActivity"
             android:exported="false"
             android:label="@string/title_activity_dashboard"

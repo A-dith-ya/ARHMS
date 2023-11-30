@@ -15,8 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Heart Rate Widget"
         tools:layout_editor_absoluteX="208dp"
-        tools:layout_editor_absoluteY="141dp"
-        android:layout_marginTop="200dp" />
+        tools:layout_editor_absoluteY="141dp" />
 
     <TextView
         android:id="@+id/textView2"

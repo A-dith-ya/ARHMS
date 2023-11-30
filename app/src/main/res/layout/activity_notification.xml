@@ -8,13 +8,11 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
-
     <TextView
         android:id="@+id/textView"
         style="@style/DashboardTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
         android:text="Heart Rate Alert"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="141dp" />

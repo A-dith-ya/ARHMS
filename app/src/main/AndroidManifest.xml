@@ -14,6 +14,9 @@
         android:theme="@style/Theme.ARHMS"
         tools:targetApi="31">
         <activity
+            android:name=".fragments.NotificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".fragments.TemperatureActivity"
             android:exported="false" />
         <activity

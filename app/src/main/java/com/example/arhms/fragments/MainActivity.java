@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         String s = subject.getObserver(0).getString();
 
         editText.setText(s);
-        startActivity(new Intent(MainActivity.this, BasicUserCustomizablePageActivity.class));
+        startActivity(new Intent(MainActivity.this, DashboardActivity.class));
         AlertSystem alertSystem = new AlertSystem(this);
         AlertInvoker alertInvoker = new AlertInvoker();
 

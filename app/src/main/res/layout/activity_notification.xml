@@ -8,39 +8,39 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/hrHigh"
         style="@style/DashboardTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Heart Rate Alert"
+        android:text="@string/heart_rate_high"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="141dp" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <Button
+        android:id="@+id/hrLow"
         style="@style/DashboardTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Temperature Rate Alert"
+        android:text="@string/heart_rate_low"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="141dp" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <Button
+        android:id="@+id/temperatureHigh"
         style="@style/DashboardTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Phone"
+        android:text="@string/temperature_high"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="141dp" />
 
-    <TextView
-        android:id="@+id/textView4"
+    <Button
+        android:id="@+id/temperatureLow"
         style="@style/DashboardTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="@string/temperature_low"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="141dp" />
 
@@ -49,6 +49,6 @@
         style="@style/MetricButtonStyle"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Ok"
+        android:text="@string/ok"
         />
 </LinearLayout>

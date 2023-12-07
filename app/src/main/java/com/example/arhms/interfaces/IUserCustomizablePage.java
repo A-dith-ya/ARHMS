@@ -2,6 +2,6 @@ package com.example.arhms.interfaces;
 
 import android.view.View;
 
-public interface UserCustomizablePage {
+public interface IUserCustomizablePage {
     void addView(View view);
 }

@@ -16,19 +16,19 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        TextView textViewForNavigation = findViewById(R.id.textView);
+        TextView textViewForNavigation = findViewById(R.id.userMetrics);
         setTextViewClickListener(textViewForNavigation, BasicUserCustomizablePageActivity.class);
 
-        TextView textViewForNavigation2 = findViewById(R.id.textView2);
+        TextView textViewForNavigation2 = findViewById(R.id.settings);
         setTextViewClickListener(textViewForNavigation2, MetricManagementActivity.class);
 
-        TextView textViewForNavigation3 = findViewById(R.id.textView3);
+        TextView textViewForNavigation3 = findViewById(R.id.heartRateMonitor);
         setTextViewClickListener(textViewForNavigation3, HeartRateActivity.class);
 
-        TextView textViewForNavigation4 = findViewById(R.id.textView4);
+        TextView textViewForNavigation4 = findViewById(R.id.temperatureMonitor);
         setTextViewClickListener(textViewForNavigation4, TemperatureActivity.class);
 
-        TextView textViewForNavigation5 = findViewById(R.id.textView5);
+        TextView textViewForNavigation5 = findViewById(R.id.notifications);
         setTextViewClickListener(textViewForNavigation5, NotificationActivity.class);
     }
 

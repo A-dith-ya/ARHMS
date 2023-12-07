@@ -8,12 +8,12 @@ import android.widget.TextView;
 
 import com.example.arhms.R;
 import com.example.arhms.abstracts.UserMetricDecorator;
-import com.example.arhms.interfaces.UserCustomizablePage;
+import com.example.arhms.interfaces.IUserCustomizablePage;
 
 public class TempDecorator extends UserMetricDecorator {
-    private UserCustomizablePage decoratedPage;
+    private IUserCustomizablePage decoratedPage;
 
-    public TempDecorator(Context context, UserCustomizablePage decoratedPage) {
+    public TempDecorator(Context context, IUserCustomizablePage decoratedPage) {
         super(context);
         this.decoratedPage = decoratedPage;
         addMetric();

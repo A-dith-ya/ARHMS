@@ -8,43 +8,43 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/userMetrics"
         style="@style/DashboardTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="User Metric Dashboard"
+        android:text="@string/user_metric"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="141dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/settings"
         style="@style/DashboardTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="User Metric Management"
+        android:text="@string/settings"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="141dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/heartRateMonitor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Heart Rate Monitor"
-        style="@style/DashboardTextViewStyle"
-        tools:layout_editor_absoluteX="208dp"
-        tools:layout_editor_absoluteY="141dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Temperature Monitor"
+        android:text="@string/heart_rate_monitor"
         style="@style/DashboardTextViewStyle"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="141dp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/temperatureMonitor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/temperature_monitor"
+        style="@style/DashboardTextViewStyle"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="141dp" />
+
+    <TextView
+        android:id="@+id/notifications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Notification"

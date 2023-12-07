@@ -47,7 +47,7 @@
         android:id="@+id/notifications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Notification"
+        android:text="@string/notification"
         style="@style/DashboardTextViewStyle"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="141dp" />

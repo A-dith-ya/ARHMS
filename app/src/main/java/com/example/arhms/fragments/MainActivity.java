@@ -11,7 +11,7 @@ import com.example.arhms.R;
 public class MainActivity extends AppCompatActivity {
     public MainActivity() {
     }
-@Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textViewForNavigation5 = findViewById(R.id.notifications);
         setTextViewClickListener(textViewForNavigation5, NotificationActivity.class);
-
-//        startActivity(new Intent(MainActivity.this, DashboardActivity.class));
     }
 
     private void setTextViewClickListener(TextView textView, final Class<?> targetActivityClass) {

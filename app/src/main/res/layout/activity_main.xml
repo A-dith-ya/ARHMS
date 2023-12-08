@@ -7,74 +7,65 @@
     tools:context=".fragments.MainActivity"
     android:orientation="vertical">
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Hello World!"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
+    <TextView
+        android:id="@+id/userMetrics"
+        style="@style/DashboardTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user_metric"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="141dp" />
 
     <TextView
-            android:id="@+id/userMetrics"
-            style="@style/DashboardTextViewStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/user_metric"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteX="208dp"
-            tools:layout_editor_absoluteY="141dp" />
+        android:id="@+id/settings"
+        style="@style/DashboardTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        app:layout_constraintTop_toBottomOf="@id/userMetrics"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="141dp" />
 
     <TextView
-            android:id="@+id/settings"
-            style="@style/DashboardTextViewStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/settings"
-            app:layout_constraintTop_toBottomOf="@id/userMetrics"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteX="208dp"
-            tools:layout_editor_absoluteY="141dp" />
+        android:id="@+id/heartRateMonitor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/heart_rate_monitor"
+        app:layout_constraintTop_toBottomOf="@id/settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/DashboardTextViewStyle"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="141dp" />
 
     <TextView
-            android:id="@+id/heartRateMonitor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/heart_rate_monitor"
-            app:layout_constraintTop_toBottomOf="@id/settings"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            style="@style/DashboardTextViewStyle"
-            tools:layout_editor_absoluteX="208dp"
-            tools:layout_editor_absoluteY="141dp" />
+        android:id="@+id/temperatureMonitor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/temperature_monitor"
+        app:layout_constraintTop_toBottomOf="@id/heartRateMonitor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/DashboardTextViewStyle"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="141dp" />
 
     <TextView
-            android:id="@+id/temperatureMonitor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/temperature_monitor"
-            app:layout_constraintTop_toBottomOf="@id/heartRateMonitor"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            style="@style/DashboardTextViewStyle"
-            tools:layout_editor_absoluteX="208dp"
-            tools:layout_editor_absoluteY="141dp" />
+        android:id="@+id/notifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/notification"
+        app:layout_constraintTop_toBottomOf="@id/temperatureMonitor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/DashboardTextViewStyle"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="141dp" />
 
-    <TextView
-            android:id="@+id/notifications"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/notification"
-            app:layout_constraintTop_toBottomOf="@id/temperatureMonitor"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            style="@style/DashboardTextViewStyle"
-            tools:layout_editor_absoluteX="208dp"
-            tools:layout_editor_absoluteY="141dp" />
-
+    parent="Theme.AppCompat.Light.NoActionBar"
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,10 +26,7 @@
             android:name=".fragments.MetricManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".fragments.DashboardActivity"
-            android:exported="false" />
-        <activity
-            android:name=".fragments.BasicUserCustomizablePageActivity"
+            android:name=".fragments.UserCustomizableActivity"
             android:exported="false" />
         <activity
             android:name=".fragments.MainActivity"

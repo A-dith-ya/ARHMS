@@ -1,5 +1,6 @@
 package com.example.arhms.utils.decorator;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.widget.ImageView;
@@ -10,15 +11,16 @@ import com.example.arhms.R;
 import com.example.arhms.abstracts.UserMetricDecorator;
 import com.example.arhms.interfaces.IUserCustomizablePage;
 
-public class TempDecorator extends UserMetricDecorator {
+public class TemperatureDecorator extends UserMetricDecorator {
     private IUserCustomizablePage decoratedPage;
 
-    public TempDecorator(Context context, IUserCustomizablePage decoratedPage) {
+    public TemperatureDecorator(Context context, IUserCustomizablePage decoratedPage) {
         super(context);
         this.decoratedPage = decoratedPage;
         addMetric();
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void addMetric() {
         LinearLayout linearLayout = new LinearLayout(getContext());

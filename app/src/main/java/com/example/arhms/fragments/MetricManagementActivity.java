@@ -16,18 +16,35 @@ public class MetricManagementActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_metric_management);
 
-        TextView textViewForNavigation = findViewById(R.id.heartRateWidget);
-        setTextViewClickListener(textViewForNavigation, BasicUserCustomizablePageActivity.class);
+        TextView heartRateTextView = findViewById(R.id.heartRateWidget);
+        setHeartRateTextViewClick(heartRateTextView);
+
+        TextView temperatureTextView = findViewById(R.id.temperatureWidget);
+        setTemperatureTextViewClick(temperatureTextView);
     }
 
-    private void setTextViewClickListener(TextView textView, final Class<?> targetActivityClass) {
+    private void setHeartRateTextViewClick(TextView textView) {
         DataStorage instance = DataStorage.getInstance();
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 instance.toggleHeartRate();
-                System.out.print("============================");
+                System.out.println("============== Temperature Click ==============");
                 System.out.println(instance.getHeartRate());
+                System.out.println(instance.getTemperature());
+            }
+        });
+    }
+
+    private void setTemperatureTextViewClick(TextView textView) {
+        DataStorage instance = DataStorage.getInstance();
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                instance.toggleTemperature();
+                System.out.println("============== Temperature Click ==============");
+                System.out.println(instance.getHeartRate());
+                System.out.println(instance.getTemperature());
             }
         });
     }

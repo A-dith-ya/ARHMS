@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView textViewForNavigation = findViewById(R.id.userMetrics);
-        setTextViewClickListener(textViewForNavigation, BasicUserCustomizablePageActivity.class);
+        setTextViewClickListener(textViewForNavigation, UserCustomizableActivity.class);
 
         TextView textViewForNavigation2 = findViewById(R.id.settings);
         setTextViewClickListener(textViewForNavigation2, MetricManagementActivity.class);

@@ -1,28 +1,28 @@
-package com.example.arhms.utils;
+package com.example.arhms;
 
 import android.app.Application;
 
 public class DataStorage extends Application {
-    private DataStorage instance;
+    private static DataStorage instance;
     private boolean heartRate = false;
     private boolean temperature = false;
     private DataStorage () {
-
+        instance.getInstance();
     }
 
-    public DataStorage getInstance () {
-        if (this.instance == null) {
-            this.instance = new DataStorage();
+    public static DataStorage getInstance () {
+        if (instance == null) {
+            instance = new DataStorage();
         }
-        return this.instance;
+        return instance;
     }
 
-    public String getHeartRate() {
-        return Boolean.toString(this.heartRate);
+    public Boolean getHeartRate() {
+        return heartRate;
     }
 
-    public String getTemperature() {
-        return Boolean.toString(this.temperature);
+    public Boolean getTemperature() {
+        return temperature;
     }
 
     public void toggleHeartRate() {

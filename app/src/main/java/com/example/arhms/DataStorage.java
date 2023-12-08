@@ -3,16 +3,18 @@ package com.example.arhms;
 import android.app.Application;
 
 public class DataStorage extends Application {
-    private static DataStorage instance;
+    private static volatile DataStorage instance;
     private boolean heartRate = false;
     private boolean temperature = false;
-    private DataStorage () {
-        instance.getInstance();
-    }
+    private DataStorage () {}
 
     public static DataStorage getInstance () {
         if (instance == null) {
-            instance = new DataStorage();
+            synchronized (DataStorage.class) {
+                if (instance == null) {
+                    instance = new DataStorage();
+                }
+            }
         }
         return instance;
     }

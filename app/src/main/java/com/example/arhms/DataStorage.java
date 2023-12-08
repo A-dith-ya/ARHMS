@@ -4,8 +4,8 @@ import android.app.Application;
 
 public class DataStorage extends Application {
     private static volatile DataStorage instance;
-    private boolean heartRate = false;
-    private boolean temperature = false;
+    private boolean heartRate = true;
+    private boolean temperature = true;
     private DataStorage () {}
 
     public static DataStorage getInstance () {

@@ -9,28 +9,51 @@
     android:gravity="center_horizontal">
 
     <TextView
-        android:id="@+id/heartRateWidget"
+        android:id="@+id/heartRate"
         style="@style/DashboardTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/heart_rate_widget"
+        android:text="@string/heart_rate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="141dp" />
+
+    <ToggleButton
+        android:id="@+id/toggleHeartRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/heart_rate"
+        app:layout_constraintStart_toEndOf="@id/heartRate"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_centerInParent="true"
+        android:checked="false" />
 
     <TextView
-        android:id="@+id/temperatureWidget"
+        android:id="@+id/temperature"
         style="@style/DashboardTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/temperature_widget"
+        app:layout_constraintStart_toStartOf="@id/heartRate"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/temperature"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="141dp" />
 
-    <Button
-        android:id="@+id/button"
-        style="@style/MetricButtonStyle"
-        android:layout_width="100dp"
+    <ToggleButton
+        android:id="@+id/toggleTemperature"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ok"
-        />
+        android:text="@string/temperature"
+        app:layout_constraintStart_toEndOf="@id/temperature"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_centerInParent="true"
+        android:checked="false" />
+
 </LinearLayout>

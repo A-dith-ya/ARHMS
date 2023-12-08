@@ -12,4 +12,6 @@
     <string name="notification">Notification</string>
     <string name="heart_rate_widget">Heart Rate Widget</string>
     <string name="temperature_widget">Temperature Widget</string>
+    <string name="heart_rate">Heart Rate</string>
+    <string name="temperature">Temperature</string>
 </resources>

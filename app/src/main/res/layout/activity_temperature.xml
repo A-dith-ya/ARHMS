@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/temp_icon" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/temperatureText"
         style="@style/DashboardTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

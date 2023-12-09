@@ -1,5 +1,6 @@
 package com.example.arhms.fragments;
 
+import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -18,10 +19,10 @@ public class UserCustomizableActivity extends AppCompatActivity implements IUser
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         DataStorage instance = DataStorage.getInstance();
+        UserMetricPage userMetricPage = new UserMetricPage(this);
         UserMetricDecorator heartRateDecorator;
         UserMetricDecorator temperatureDecorator;
 
-        UserMetricPage userMetricPage = new UserMetricPage(this);
         if (instance.getHeartRate())
             heartRateDecorator = new HeartRateDecorator(this, userMetricPage);
         if (instance.getTemperature())
@@ -31,7 +32,5 @@ public class UserCustomizableActivity extends AppCompatActivity implements IUser
     }
 
     @Override
-    public void addView(View view) {
-
-    }
+    public void addView(View view) {}
 }

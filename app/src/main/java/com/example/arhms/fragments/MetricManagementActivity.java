@@ -1,15 +1,12 @@
 package com.example.arhms.fragments;
 
-import android.content.Intent;
-import android.view.View;
+import android.os.Bundle;
+import android.os.Handler;
 import android.widget.CompoundButton;
-import android.widget.TextView;
 import android.widget.ToggleButton;
+import androidx.appcompat.app.AppCompatActivity;
 import com.example.arhms.DataStorage;
 import com.example.arhms.R;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 
 public class MetricManagementActivity extends AppCompatActivity {
 

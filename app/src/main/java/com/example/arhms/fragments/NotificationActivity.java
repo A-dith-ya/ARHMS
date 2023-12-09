@@ -42,16 +42,6 @@ public class NotificationActivity extends AppCompatActivity {
         });
 
         // Set a click listener for the button
-        hrHighBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Handle button click event
-                alertInvoker.setAlertCommand(heartRateLow);
-                alertInvoker.executeAlert();
-            }
-        });
-
-        // Set a click listener for the button
         hrLowBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

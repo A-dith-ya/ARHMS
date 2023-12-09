@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/heart_icon" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/heartRateText"
         style="@style/DashboardTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

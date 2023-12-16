@@ -6,7 +6,7 @@ import com.example.arhms.interfaces.ISubject;
 
 public class UserData implements ISubject {
     private ArrayList<IObserver> observers;
-    private long temperature;
+    private int temperature;
     private int heartRate;
 
     public UserData () {
@@ -34,7 +34,7 @@ public class UserData implements ISubject {
     }
 
     @Override
-    public void setMeasurements(long temperature, int heartRate) {
+    public void setMeasurements(int temperature, int heartRate) {
         try {
             this.temperature = temperature;
             this.heartRate = heartRate;

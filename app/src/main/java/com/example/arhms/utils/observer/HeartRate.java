@@ -10,7 +10,7 @@ public class HeartRate implements IObserver {
     public HeartRate() {}
 
     @Override
-    public void update(long temperature, int heartRate) {
+    public void update(int temperature, int heartRate) {
         this.value = heartRate;
     }
 

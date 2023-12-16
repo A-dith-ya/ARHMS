@@ -43,7 +43,7 @@ public class HeartRateActivity extends AppCompatActivity implements IObserver {
     }
 
     @Override
-    public void update(long temperature, int heartRate) {
+    public void update(int temperature, int heartRate) {
         heartRateTextView.setText("Heart Rate: " + Integer.toString(heartRate) + " BPM");
     }
 

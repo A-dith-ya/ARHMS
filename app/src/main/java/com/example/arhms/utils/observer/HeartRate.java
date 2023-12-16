@@ -5,15 +5,13 @@ import com.example.arhms.interfaces.IObserver;
 import java.util.ArrayList;
 
 public class HeartRate implements IObserver {
-    private ArrayList<long[]> value;
+    private int value;
 
-    public HeartRate() {
-        this.value = new ArrayList<>();
-    }
+    public HeartRate() {}
 
     @Override
-    public void update(long temperature, long[] heartRate) {
-        this.value.add(heartRate);
+    public void update(long temperature, int heartRate) {
+        this.value = heartRate;
     }
 
     @Override
@@ -21,7 +19,7 @@ public class HeartRate implements IObserver {
         return "N/A";
     }
 
-    public ArrayList<long[]> getValue() {
+    public long getValue() {
         return this.value;
     }
 }

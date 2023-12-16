@@ -6,7 +6,7 @@ public class Temperature implements IObserver {
     private long value;
 
     @Override
-    public void update(long temperature, long[] heartRate) {
+    public void update(long temperature, int heartRate) {
         this.value = temperature;
         // do nothing with heart rate
     }

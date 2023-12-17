@@ -40,6 +40,7 @@ public class HeartRateActivity extends AppCompatActivity implements IObserver {
     protected void onDestroy() {
         super.onDestroy();
         userData.removeObserver(this);
+        handler.removeCallbacksAndMessages(null);
     }
 
     @Override

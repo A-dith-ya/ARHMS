@@ -1,0 +1,79 @@
+[
+  {
+    "name": "restart",
+    "x": 10,
+    "y": 0,
+    "width": 200,
+    "height": 300
+  },
+  {
+    "name": "cloud",
+    "x": 470,
+    "y": 0,
+    "width": 250,
+    "height": 300
+  },
+  {
+    "name": "flying_dino_1",
+    "x": 720,
+    "y": 0,
+    "width": 250,
+    "height": 300
+  },
+  {
+    "name": "flying_dino_2",
+    "x": 970,
+    "y": 0,
+    "width": 250,
+    "height": 300
+  },
+  {
+    "name": "cactus_small",
+    "x": 1220,
+    "y": 0,
+    "width": 100,
+    "height": 300
+  },
+  {
+    "name": "cactus_big",
+    "x": 1800,
+    "y": 0,
+    "width": 125,
+    "height": 300
+  },
+  {
+    "name": "game_over",
+    "x": 2630,
+    "y": 0,
+    "width": 1040,
+    "height": 300
+  },
+  {
+    "name": "dino_idle",
+    "x": 3680,
+    "y": 0,
+    "width": 250,
+    "height": 300
+  },
+  {
+    "name": "dino_walk_1",
+    "x": 4160,
+    "y": 0,
+    "width": 250,
+    "height": 300
+  },
+  {
+    "name": "dino_walk_2",
+    "x": 4400,
+    "y": 0,
+    "width": 250,
+    "height": 300
+  },
+  {
+    "name": "dino_finish",
+    "x": 4650,
+    "y": 0,
+    "width": 250,
+    "height": 300
+  }
+]

@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textViewForNavigation5 = findViewById(R.id.notifications);
         setTextViewClickListener(textViewForNavigation5, NotificationActivity.class);
+
+        TextView textViewForNavigation6 = findViewById(R.id.rexRunGame);
+        setTextViewClickListener(textViewForNavigation6, RexRunActivity.class);
     }
 
     private void setTextViewClickListener(TextView textView, final Class<?> targetActivityClass) {

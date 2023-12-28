@@ -7,12 +7,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SpriteSheetExtractor {
-    public static List<Bitmap> extractSprites(Bitmap originalBitmap, InputStream jsonInputStream) {
-        List<Bitmap> sprites = new ArrayList<>();
+    public static Map<String, Bitmap> extractSprites(Bitmap originalBitmap, InputStream jsonInputStream) {
+        Map<String, Bitmap> spriteMap = new HashMap<>();
 
         try {
             int size = jsonInputStream.available();
@@ -33,7 +33,7 @@ public class SpriteSheetExtractor {
                 int height = jsonObject.getInt("height");
 
                 Bitmap spriteBitmap = Bitmap.createBitmap(originalBitmap, x, y, width, height);
-                sprites.add(spriteBitmap);
+                spriteMap.put(name, spriteBitmap);
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -41,6 +41,6 @@ public class SpriteSheetExtractor {
             e.printStackTrace();
         }
 
-        return sprites;
+        return spriteMap;
     }
 }

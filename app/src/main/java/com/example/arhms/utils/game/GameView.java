@@ -3,23 +3,27 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.view.SurfaceView;
 import com.example.arhms.R;
 
 import java.io.InputStream;
-import java.util.List;
+import java.util.Map;
 
 public class GameView extends SurfaceView implements Runnable {
 
     private Thread gameThread;
     private boolean isPlaying;
 
+    Map<String, Bitmap> spriteMap;
+
     public GameView(Context context) {
         super(context);
 
         Bitmap originalBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.sprite);
         InputStream jsonInputStream = getResources().openRawResource(R.raw.spritemetadata);
-        List<Bitmap> sprites = SpriteSheetExtractor.extractSprites(originalBitmap, jsonInputStream);
+        spriteMap = SpriteSheetExtractor.extractSprites(originalBitmap, jsonInputStream);
+
 
         gameThread = new Thread(this);
         gameThread.start();
@@ -55,6 +59,10 @@ public class GameView extends SurfaceView implements Runnable {
     private void draw() {
         if (getHolder().getSurface().isValid()) {
             Canvas canvas = getHolder().lockCanvas();
+
+            canvas.drawColor(Color.WHITE);
+
+            canvas.drawBitmap(spriteMap.get("ground"), 0, 800, null);
 
             getHolder().unlockCanvasAndPost(canvas);
         }

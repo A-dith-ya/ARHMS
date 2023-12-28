@@ -17,12 +17,18 @@ public class GameView extends SurfaceView implements Runnable {
     private Thread gameThread;
     private boolean isPlaying;
 
-    Map<String, Bitmap> spriteMap;
-    int dinosaurX = 50;
-    int dinosaurY = 550;
+    private Map<String, Bitmap> spriteMap;
+    private int dinosaurX = 200;
+    private int dinosaurY = 550;
+    private int obstacleX = 1000;
 
     private boolean isDinoWalk1 = true;
     private boolean isDinoJump = false;
+    private boolean isFlapWings = true;
+    private boolean isSpawn = true;
+    private boolean isFlyingDino = false;
+    private boolean isCactusSmall = false;
+    private boolean isCactusBig = false;
     private Handler handler = new Handler();
 
     public GameView(Context context) {
@@ -31,7 +37,6 @@ public class GameView extends SurfaceView implements Runnable {
         Bitmap originalBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.sprite);
         InputStream jsonInputStream = getResources().openRawResource(R.raw.spritemetadata);
         spriteMap = SpriteSheetExtractor.extractSprites(originalBitmap, jsonInputStream);
-
 
         gameThread = new Thread(this);
         gameThread.start();
@@ -48,12 +53,14 @@ public class GameView extends SurfaceView implements Runnable {
     @Override
     public void run() {
         while (isPlaying) {
+            moveObstacle();
             draw();
 
             isDinoWalk1 = !isDinoWalk1;
+            isFlapWings = !isFlapWings;
 
             try {
-                Thread.sleep(200);
+                Thread.sleep(150);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -88,16 +95,54 @@ public class GameView extends SurfaceView implements Runnable {
             else
                 canvas.drawBitmap(spriteMap.get("dino_walk_2"), dinosaurX, dinosaurY, null);
 
+            if (isSpawn) {
+                isSpawn = false;
+                int randomObstacle = (int) (Math.random() * 3);
+                switch (randomObstacle) {
+                    case 0:
+                        isCactusSmall = true;
+                        break;
+                    case 1:
+                        isCactusBig = true;
+                        break;
+                    case 2:
+                        isFlyingDino = true;
+                        break;
+                }
+            }
+
+            if (isCactusSmall)
+                canvas.drawBitmap(spriteMap.get("cactus_small"), obstacleX, 620, null);
+            else if (isCactusBig)
+                canvas.drawBitmap(spriteMap.get("cactus_big"), obstacleX, 540, null);
+            else if (isFlyingDino) {
+                if (isFlapWings)
+                    canvas.drawBitmap(spriteMap.get("flying_dino_1"), obstacleX, 520, null);
+                else
+                    canvas.drawBitmap(spriteMap.get("flying_dino_2"), obstacleX, 500, null);
+            }
+
             getHolder().unlockCanvasAndPost(canvas);
         }
     }
 
     private void jump() {
-        dinosaurY -= 200;
+        dinosaurY -= 250;
 
         handler.postDelayed(() -> {
             isDinoJump = false;
-            dinosaurY += 200;
+            dinosaurY += 250;
         }, 500);
+    }
+
+    private void moveObstacle() {
+        obstacleX -= 50;
+        if (obstacleX < 0) {
+            isSpawn = true;
+            isCactusBig = false;
+            isCactusSmall = false;
+            isFlyingDino = false;
+            obstacleX = 1000;
+        }
     }
 }

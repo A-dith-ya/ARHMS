@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
@@ -21,6 +22,7 @@ public class GameView extends SurfaceView implements Runnable {
     private int dinosaurX = 200;
     private int dinosaurY = 550;
     private int obstacleX = 1000;
+    private int score = 0;
 
     private boolean isMovingSprite = true;
     private boolean isDinoJump = false;
@@ -28,6 +30,7 @@ public class GameView extends SurfaceView implements Runnable {
     private boolean isFlyingDino = false;
     private boolean isCactusSmall = false;
     private boolean isCactusBig = false;
+    private boolean isGameOver = false;
     private Handler handler = new Handler();
 
     public GameView(Context context) {
@@ -57,6 +60,7 @@ public class GameView extends SurfaceView implements Runnable {
             draw();
 
             isMovingSprite = !isMovingSprite;
+            score += 1;
 
             try {
                 Thread.sleep(150);
@@ -120,6 +124,11 @@ public class GameView extends SurfaceView implements Runnable {
                 else
                     canvas.drawBitmap(spriteMap.get("flying_dino_2"), obstacleX, 500, null);
             }
+
+            Paint paint = new Paint();
+            paint.setColor(Color.BLACK);
+            paint.setTextSize(50);
+            canvas.drawText("Score: " + score, 50, 50, paint);
 
             getHolder().unlockCanvasAndPost(canvas);
         }

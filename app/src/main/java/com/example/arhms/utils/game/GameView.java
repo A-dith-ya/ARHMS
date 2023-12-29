@@ -22,9 +22,8 @@ public class GameView extends SurfaceView implements Runnable {
     private int dinosaurY = 550;
     private int obstacleX = 1000;
 
-    private boolean isDinoWalk1 = true;
+    private boolean isMovingSprite = true;
     private boolean isDinoJump = false;
-    private boolean isFlapWings = true;
     private boolean isSpawn = true;
     private boolean isFlyingDino = false;
     private boolean isCactusSmall = false;
@@ -53,11 +52,11 @@ public class GameView extends SurfaceView implements Runnable {
     @Override
     public void run() {
         while (isPlaying) {
+            collisionDetection();
             moveObstacle();
             draw();
 
-            isDinoWalk1 = !isDinoWalk1;
-            isFlapWings = !isFlapWings;
+            isMovingSprite = !isMovingSprite;
 
             try {
                 Thread.sleep(150);
@@ -90,7 +89,7 @@ public class GameView extends SurfaceView implements Runnable {
 
             canvas.drawBitmap(spriteMap.get("ground"), 0, 800, null);
 
-            if(isDinoWalk1)
+            if(isMovingSprite)
                 canvas.drawBitmap(spriteMap.get("dino_walk_1"), dinosaurX, dinosaurY, null);
             else
                 canvas.drawBitmap(spriteMap.get("dino_walk_2"), dinosaurX, dinosaurY, null);
@@ -116,7 +115,7 @@ public class GameView extends SurfaceView implements Runnable {
             else if (isCactusBig)
                 canvas.drawBitmap(spriteMap.get("cactus_big"), obstacleX, 540, null);
             else if (isFlyingDino) {
-                if (isFlapWings)
+                if (isMovingSprite)
                     canvas.drawBitmap(spriteMap.get("flying_dino_1"), obstacleX, 520, null);
                 else
                     canvas.drawBitmap(spriteMap.get("flying_dino_2"), obstacleX, 500, null);
@@ -132,7 +131,7 @@ public class GameView extends SurfaceView implements Runnable {
         handler.postDelayed(() -> {
             isDinoJump = false;
             dinosaurY += 250;
-        }, 500);
+        }, 1250);
     }
 
     private void moveObstacle() {
@@ -143,6 +142,21 @@ public class GameView extends SurfaceView implements Runnable {
             isCactusSmall = false;
             isFlyingDino = false;
             obstacleX = 1000;
+        }
+    }
+
+    private void collisionDetection() {
+        int obstacleWidth = 125;
+        int dinoWidth = 250;
+
+        int dinoHeight = 300;
+        int obstacleHeight = 300;
+        int obstacleY = 500;
+
+        if (dinosaurX < obstacleX + obstacleWidth &&
+                dinosaurX + dinoWidth > obstacleX &&
+                dinosaurY + dinoHeight >= obstacleY + obstacleHeight) {
+            pause();
         }
     }
 }

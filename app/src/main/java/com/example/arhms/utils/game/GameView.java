@@ -5,6 +5,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
@@ -39,6 +43,13 @@ public class GameView extends SurfaceView implements Runnable {
         Bitmap originalBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.sprite);
         InputStream jsonInputStream = getResources().openRawResource(R.raw.spritemetadata);
         spriteMap = SpriteSheetExtractor.extractSprites(originalBitmap, jsonInputStream);
+
+        SensorManager sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
+        Sensor accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+        if (accelerometerSensor != null) {
+            sensorManager.registerListener(sensorEventListener, accelerometerSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        }
 
         gameThread = new Thread(this);
         gameThread.start();
@@ -168,4 +179,21 @@ public class GameView extends SurfaceView implements Runnable {
             pause();
         }
     }
+
+    private SensorEventListener sensorEventListener = new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent event) {
+            float[] values = event.values;
+
+            if (event.values[0] > 100) {
+                isPlaying = true;
+            }
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+        }
+    };
+
 }
